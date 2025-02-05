@@ -1,4 +1,3 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -128,7 +127,7 @@ class PokemonSearchDelegate extends SearchDelegate {
               return ListTile(
                 onTap: () {
                   context.router
-                      .push(PokemonDetailRoute(pokemonName: pokemon.name));
+                      .push(PokemonDetailRoute(pokemonId: pokemon.id));
                 },
                 title: Text(pokemon.name),
                 subtitle: Text(pokemon.types.join(', ')),

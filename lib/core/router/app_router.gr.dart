@@ -38,13 +38,13 @@ class HomeRoute extends _i3.PageRouteInfo<void> {
 class PokemonDetailRoute extends _i3.PageRouteInfo<PokemonDetailRouteArgs> {
   PokemonDetailRoute({
     _i4.Key? key,
-    required String pokemonName,
+    required int pokemonId,
     List<_i3.PageRouteInfo>? children,
   }) : super(
           PokemonDetailRoute.name,
           args: PokemonDetailRouteArgs(
             key: key,
-            pokemonName: pokemonName,
+            pokemonId: pokemonId,
           ),
           initialChildren: children,
         );
@@ -57,7 +57,7 @@ class PokemonDetailRoute extends _i3.PageRouteInfo<PokemonDetailRouteArgs> {
       final args = data.argsAs<PokemonDetailRouteArgs>();
       return _i2.PokemonDetailPage(
         key: args.key,
-        pokemonName: args.pokemonName,
+        pokemonId: args.pokemonId,
       );
     },
   );
@@ -66,15 +66,15 @@ class PokemonDetailRoute extends _i3.PageRouteInfo<PokemonDetailRouteArgs> {
 class PokemonDetailRouteArgs {
   const PokemonDetailRouteArgs({
     this.key,
-    required this.pokemonName,
+    required this.pokemonId,
   });
 
   final _i4.Key? key;
 
-  final String pokemonName;
+  final int pokemonId;
 
   @override
   String toString() {
-    return 'PokemonDetailRouteArgs{key: $key, pokemonName: $pokemonName}';
+    return 'PokemonDetailRouteArgs{key: $key, pokemonId: $pokemonId}';
   }
 }

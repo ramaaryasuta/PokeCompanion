@@ -20,8 +20,12 @@ class $AssetsImagesGen {
   AssetGenImage get pokeballDark =>
       const AssetGenImage('assets/images/pokeball_dark.png');
 
+  /// File path: assets/images/prof_oak.png
+  AssetGenImage get profOak =>
+      const AssetGenImage('assets/images/prof_oak.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [pokeball, pokeballDark];
+  List<AssetGenImage> get values => [pokeball, pokeballDark, profOak];
 }
 
 class Assets {

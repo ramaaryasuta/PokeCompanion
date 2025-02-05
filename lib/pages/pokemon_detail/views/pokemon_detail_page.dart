@@ -9,9 +9,9 @@ import 'pokemon_data_widget.dart';
 
 @RoutePage()
 class PokemonDetailPage extends StatefulWidget {
-  const PokemonDetailPage({super.key, required this.pokemonName});
+  const PokemonDetailPage({super.key, required this.pokemonId});
 
-  final String pokemonName;
+  final int pokemonId;
 
   @override
   State<PokemonDetailPage> createState() => _PokemonDetailPageState();
@@ -20,9 +20,8 @@ class PokemonDetailPage extends StatefulWidget {
 class _PokemonDetailPageState extends State<PokemonDetailPage> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) => context
-        .read<PokemonDetailCubit>()
-        .getPokemonDetail(widget.pokemonName));
+    WidgetsBinding.instance.addPostFrameCallback((_) =>
+        context.read<PokemonDetailCubit>().getPokemonDetail(widget.pokemonId));
     super.initState();
   }
 

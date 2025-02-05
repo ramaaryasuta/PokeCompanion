@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokeapi/model/pokemon/pokemon.dart';
-import 'package:pokecompanion/pages/pokemon_detail/views/widgets/poke_image_container.dart';
+import 'package:pokecompanion/pages/pokemon_detail/views/widgets/status_pokemon_widget.dart';
+import 'widgets/poke_image_container.dart';
 
 class PokemonDataWidget extends StatelessWidget {
   const PokemonDataWidget({
@@ -16,9 +17,8 @@ class PokemonDataWidget extends StatelessWidget {
       child: Column(
         spacing: 10,
         children: [
-          PokemonImageContainer(
-            pokemon: pokeData,
-          ),
+          PokemonImageContainer(pokemon: pokeData),
+          StatusPokemonWidget(pokeData: pokeData),
         ],
       ),
     );
