@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +7,7 @@ import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:pokecompanion/pages/home/cubit/search_cubit.dart';
 import 'package:pokecompanion/pages/pokedex/views/pokedex_view.dart';
 
+import '../../../core/router/app_router.gr.dart';
 import '../cubit/search_state.dart';
 
 @RoutePage()
@@ -124,6 +126,10 @@ class PokemonSearchDelegate extends SearchDelegate {
             itemBuilder: (context, index) {
               final pokemon = pokemonList[index];
               return ListTile(
+                onTap: () {
+                  context.router
+                      .push(PokemonDetailRoute(pokemonName: pokemon.name));
+                },
                 title: Text(pokemon.name),
                 subtitle: Text(pokemon.types.join(', ')),
                 leading: CachedNetworkImage(

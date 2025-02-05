@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokecompanion/components/loading_widget.dart';
 
 import '../cubits/pokedex_cubit.dart';
 import '../cubits/pokedex_state.dart';
@@ -52,15 +53,9 @@ class _PokedexViewScreenState extends State<PokedexViewScreen> {
           child: BlocBuilder<PokedexCubit, PokedexState>(
             builder: (context, state) {
               if (state is PokedexInitial) {
-                return const Center(
-                    child: CircularProgressIndicator(
-                  color: Colors.red,
-                ));
+                return const Center(child: PLoadingWidget());
               } else if (state is PokedexLoading && state.pokemon.isEmpty) {
-                return const Center(
-                    child: CircularProgressIndicator(
-                  color: Colors.red,
-                ));
+                return const Center(child: PLoadingWidget());
               } else if (state is PokedexError) {
                 return Center(child: Text('Error: ${state.message}'));
               } else if (state is PokedexLoaded) {

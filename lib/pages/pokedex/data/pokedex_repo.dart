@@ -1,5 +1,5 @@
 // import 'package:pokeapi/model/pokemon/pokemon.dart';
-import 'dart:developer';
+// import 'dart:developer';
 
 import 'package:pokecompanion/pages/pokedex/data/my_pokedex_model.dart';
 // import '../../../core/repository/api_path.dart';
@@ -62,7 +62,6 @@ class PokeDexRepository {
         await ApiServices(activeUrl: 'https://www.jsonkeeper.com/b')
             .getRequest(path: '/AVET');
     // if (response.statusCode != 200) return [];
-    log('${response.data}');
     pokemonList =
         (response.data as List).map((e) => MyPokemon.fromJson(e)).toList();
     return pokemonList;

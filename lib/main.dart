@@ -8,6 +8,7 @@ import 'gen/fonts.gen.dart';
 import 'core/router/app_router.dart';
 import 'pages/home/cubit/search_cubit.dart';
 import 'pages/pokedex/cubits/pokedex_cubit.dart';
+import 'pages/pokemon_detail/cubit/pokemon_detail_cubit.dart';
 
 void main() {
   runZonedGuarded(() {
@@ -18,6 +19,8 @@ void main() {
           BlocProvider<SearchCubit>(
               create: (context) =>
                   SearchCubit(pokedexCubit: context.read<PokedexCubit>())),
+          BlocProvider<PokemonDetailCubit>(
+              create: (context) => PokemonDetailCubit()),
         ],
         child: MyApp(),
       ),
