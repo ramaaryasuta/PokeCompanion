@@ -11,7 +11,14 @@ class PokemonDetailCubit extends Cubit<PokemonDetailState> {
     try {
       final pokemonDetail =
           await PokemonDetailRepo().getPokemonDetail(pokemonId);
-      emit(PokemonDetailLoaded(pokemonDetail: pokemonDetail));
+      final otherData =
+          await PokemonDetailRepo().getAnotherDataPokemon(pokemonId);
+      final encounterData = await PokemonDetailRepo().getEncounter(pokemonId);
+      emit(PokemonDetailLoaded(
+        pokemonDetail: pokemonDetail,
+        otherPokeData: otherData,
+        encounter: encounterData,
+      ));
     } catch (e) {
       emit(PokemonDetailError(errorMsg: e.toString()));
     }

@@ -20,7 +20,8 @@ class PokemonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.router.push(PokemonDetailRoute(pokemonId: pokemon.id));
+        context.router.push(PokemonDetailRoute(
+            pokemonId: pokemon.id, pokemonName: pokemon.name));
       },
       child: Container(
         padding: const EdgeInsets.all(10),

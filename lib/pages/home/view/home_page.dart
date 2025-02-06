@@ -126,8 +126,8 @@ class PokemonSearchDelegate extends SearchDelegate {
               final pokemon = pokemonList[index];
               return ListTile(
                 onTap: () {
-                  context.router
-                      .push(PokemonDetailRoute(pokemonId: pokemon.id));
+                  context.router.push(PokemonDetailRoute(
+                      pokemonId: pokemon.id, pokemonName: pokemon.name));
                 },
                 title: Text(pokemon.name),
                 subtitle: Text(pokemon.types.join(', ')),

@@ -15,8 +15,7 @@ class StatusPokemonWidget extends StatelessWidget {
         spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('${pokeData.name?.capitalizeFirst()} Base Status',
-              style: Theme.of(context).textTheme.titleLarge!),
+          Text('Base Status', style: Theme.of(context).textTheme.titleLarge!),
           Container(
             width: double.maxFinite,
             padding: const EdgeInsets.all(20),
@@ -41,7 +40,7 @@ class StatusPokemonWidget extends StatelessWidget {
                       value: status.baseStat!.toDouble() ?? 0),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
