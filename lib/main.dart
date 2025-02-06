@@ -3,6 +3,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'gen/fonts.gen.dart';
 
 import 'core/router/app_router.dart';
@@ -11,7 +13,11 @@ import 'pages/pokedex/cubits/pokedex_cubit.dart';
 import 'pages/pokemon_detail/cubit/pokemon_detail_cubit.dart';
 
 void main() {
-  runZonedGuarded(() {
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
     runApp(
       MultiBlocProvider(
         providers: [

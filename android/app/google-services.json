@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "323055143913",
+    "project_id": "pokecompanion-6306f",
+    "storage_bucket": "pokecompanion-6306f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323055143913:android:36c28ed95ddcd4b33e5978",
+        "android_client_info": {
+          "package_name": "com.ralabs.pokecompanion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjKS9QjAEreQ6bGQEo874JyxCbt96_Zj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
